@@ -1,5 +1,3 @@
-
-
 const { Sequelize } = require('sequelize');
 const sequelize = require('sequelize')
 const sequalizeConnection = require('../config/sequelizeConnection');
@@ -11,6 +9,11 @@ const User = sequalizeConnection.define('post', {
         primarykey: true,
         autoIncrement:true,
         allowNull: false,
+    },
+
+    title: {
+        type: Sequelize.toString,
+        allowNull: false
     },
 
     content: {
