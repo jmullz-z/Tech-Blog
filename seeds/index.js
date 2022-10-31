@@ -59,7 +59,7 @@ const comments = [
 
 const plantSeeds = async () => {
 
-    await users.bulkCreate(users):
+    await users.bulkCreate(users, {individualHooks: true});
     await Post.bulkCreate(posts);
     await comments.bulkCreate(comments);
 }

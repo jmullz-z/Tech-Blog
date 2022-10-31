@@ -37,8 +37,9 @@ const User = sequalizeConnection.define('usser', {
 });
 
 User.beforeCreate(async user => {
-    console.log('intercepte ata: ', user);
+    console.log('intercepte ata: ', user.dataValues);
+    const userData = user.dataValues;
     user.password = await bcrypt.hash(user.passworr, 10);
-})
+});
 
 module.exports = User;
