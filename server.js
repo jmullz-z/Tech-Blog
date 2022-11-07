@@ -34,7 +34,7 @@ app.use(express.json());
 app,use(express.urlencoded({ extended: flase }));
 app.use(express.static(path.join(_dirname, 'public')));
 
-// app,use(require('./controllers/'));
+app.use(require('./controllers/'));
 
 sequelize.sync({force: true}).then(() => {
     app.listen(PORT, () => console.log("Now Listening"))
