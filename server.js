@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const helpers = require('./utils/helpers.js');
+const helpers = require('./utls/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -11,6 +11,7 @@ const sequelizeConnection = require('./config/sequelizeConnection');
 const { Console } = require('console');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const models = require('./models');
+const sequelize = require('./config/connection');
 
 const sess = {
     secret: 'Suoer secret secret',
@@ -35,9 +36,8 @@ app.use(express.static(path.join(_dirname, 'public')));
 
 // app,use(require('./controllers/'));
 
-//app.listen(PORT {
-//    Console.LOG('App listening on port ${PORT}!');
-//    sequelizeConnection.sync({force: true});
-//}));
+sequelize.sync({force: true}).then(() => {
+    app.listen(PORT, () => console.log("Now Listening"))
+})
 
 
