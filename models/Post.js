@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 const sequelize = require('sequelize')
-const sequalizeConnection = require('../config/sequelizeConnection');
+const sequalizeConnection = require('../config/connection');
 
 const User = sequalizeConnection.define('post', {
 

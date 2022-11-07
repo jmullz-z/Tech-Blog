@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
-const sequelize = require('sequelize')
-const sequalizeConnection = require('../config/sequelizeConnection');
+const sequelize = require('sequelize');
+const sequalizeConnection = require('../config/connection');
 
 const Comment = sequalizeConnection.define('post', {
 
@@ -14,7 +14,7 @@ const Comment = sequalizeConnection.define('post', {
     title: {
         type: Sequelize.toString,
         allowNull: false
-    }
+    },
 
     content: {
         type: Sequelize.TEXT,
