@@ -1,45 +1,38 @@
-const { Sequelize } = require('sequelize');
-const sequelize = require('sequelize')
-const sequalizeConnection = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-const User = sequalizeConnection.define('post', {
+class Post extends Model {}
 
+Post.init(
+  {
     id: {
-        type: Sequelize.INTEGER,
-        primarykey: true,
-        autoIncrement:true,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-
     title: {
-        type: Sequelize.toString,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-
     content: {
-        type: Sequelize.TEXT,
-        allowNull: false
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
-
     user_id: {
-        type: Sequelize.INTEGER,
-        allowNull: flase,
-        reference: {
-            model: 'User',
-            key:'id'
-        }
-    }
-
-}, {
-    sequelize: sequalizeConnection,
-    timestamps: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+  },
+  {
+    sequelize,
     freezeTableName: true,
-    modelName: 'posts',
-    underscore: ture
-});
-
-User.beforeCreate(async user => {
-    user.password = await bcrypt.hash(user.passworr, 10);
-})
+    underscored: true,
+    modelName: "post",
+  }
+);
 
 module.exports = Post;
