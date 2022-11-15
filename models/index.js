@@ -2,8 +2,6 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
-console.log('ran models: ', Post);
-
 User.hasMany(Post, {
     foreignkey: 'user_id',
     onDelete: 'CASCADE'
@@ -34,8 +32,4 @@ Comment.belongsTo(User, {
     onDelete: 'CASCADE',
 });
 
-module.exports = {
-    User,
-    Comment,
-    Post
-};
+module.exports = {User, Comment, Post};
