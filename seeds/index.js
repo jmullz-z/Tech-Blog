@@ -9,50 +9,50 @@ const {
 const users = [
 
 {
-    username: 'Willie',
-    passowrd: 'Willieluvsdogz1'
+    username: 'Dingo',
+    passowrd: 'Dingothedingus'
 },
 
 {
-    username: 'Carly',
-    passowrd: 'Carlyluvsdogz12'
+    username: 'Bonkers',
+    passowrd: 'BonkersandPeaches'
 },
 
 {
-    username: 'Charlotte',
-    passowrd: 'Charluvsdogz123'
+    username: 'Fiona',
+    passowrd: 'Fionathehorse'
 }
 
 ]
 
 const Posts = [
     {
-    title: 'why are dogs awesome',
-    content: 'they luv humans',
+    title: 'what is feathery and flightless and can kill man and lion aklike',
+    content: 'the ostrich',
     user_id: 2
     },
 
     {
-        title: 'why do cats rule',
-        content: 'they snuggle humans',
+        title: 'what large animal that you would not expect weighs less then the tounge of a blue whale',
+        content: 'elephants',
         user_id: 1
     },
 
     {
-    title: 'why do brids run the kingdom',
-    content: 'they talk to everyone in the kingdom',
+    title: 'which fish are all born male and only change sex to become a dominant female',
+    content: 'the clownfish',
     user_id: 3
     }
 ]
 
 const comments = [
     {
-        content: 'these aniamals are crazy',
+        content: 'fun fact',
         user_id: 3
-    }
+    },
 
     {
-        content: 'actually, cats drool',
+        content: 'animals are amazing',
         user_id: 1
     }
 ]

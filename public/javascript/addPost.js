@@ -1,14 +1,25 @@
-const logout = async function() {
-    const response = await fetch('/api/user/logout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-    });
-  
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to log out');
+async function newFormHandler(event) {
+  event.preventDefault();
+
+  const title = document.querySelector('input[name="post-title"]').value;
+  const post_content = document.querySelector('input[name="post-content"]').value;
+
+  const response = await fetch(`/api/posts`, {
+    method: 'POST',
+    body: JSON.stringify({
+      title,
+      post_content
+    }),
+    headers: {
+      'Content-Type': 'application/json'
     }
-  };
-  
-  document.querySelector('#logout').addEventListener('click', logout);
+  });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
